@@ -1,0 +1,63 @@
+
+Cauldron spells = ["Expecto Patronum", "Wingardium Leviosa", "Expelliarmus"]
+
+
+SpellBooks wizard_details = {
+    "Harry": 17,
+    "Ron": 18,
+    "Hermione": 19
+}
+
+
+Magical Creature Wizard(name, house) {
+    Illuminate("A new wizard named " + name + " from " + house + " house has arrived at Hogwarts.")
+    
+    Incantation cast_spell(spell) {
+        Ifar spell in spells {
+            Illuminate(name + " casts " + spell + " successfully!")
+        } Elsear {
+            Illuminate("The spell " + spell + " is unknown to " + name + ".")
+        }
+    }
+}
+
+
+Cast Wizard("Harry", "Gryffindor")
+Cast Wizard("Hermione", "Gryffindor")
+Cast Wizard("Draco", "Slytherin")
+
+Cast Wizard("Harry", "Gryffindor").cast_spell("Expecto Patronum")
+Cast Wizard("Hermione", "Gryffindor").cast_spell("Alohomora")  
+
+
+Protego {
+    Illuminate("Attempting to access undefined variable.")
+    Wand mystery = undefined_variable
+} Alohomora {
+    Illuminate("Caught an error: Variable 'undefined_variable' is not defined.")
+}
+
+
+Persistus counter >= 1 {
+    Illuminate("Counting down: " + str(counter))
+    counter = counter - 1
+}
+
+Illuminate("Liftoff!")
+
+
+
+
+Illuminate(prophecy)
+
+
+Illuminate("Spells in the cauldron:")
+Loopus i = 0 i < len(spells) i = i + 1 {
+    Illuminate("- " + spells[i])
+}
+
+
+Illuminate("Wizard Ages:")
+Forar wizard, age in wizard_details {
+    Illuminate(wizard + " is " + str(age) + " years old.")
+}
